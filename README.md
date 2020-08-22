@@ -7,6 +7,9 @@ laboratory research experiments; to be adapted as needed.
 ```
 {{exp-name}}            # Experiment-sepcific folder
 │
+├── NOTES.md            # This file holds daily notes and records for the experiment. This is lab member-specific and
+│                       # should not be committed to the online repository
+│
 ├── requirements.txt    # Required dependency packages for python notebooks and source code
 │
 ├── analysis            # A directory for jupyter notebooks for R/Python code
