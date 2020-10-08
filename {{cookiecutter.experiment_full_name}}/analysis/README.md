@@ -1,4 +1,4 @@
-# {{cookiecutter.experiment_name}} Analysis
+# {{cookiecutter.experiment_full_name}} Analysis
 
 This directory contains a list of jupyter notebooks written in either R or
 Python for use in exploratory data analysis and figure preparation

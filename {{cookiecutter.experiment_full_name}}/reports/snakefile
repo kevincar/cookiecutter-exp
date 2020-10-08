@@ -1,0 +1,23 @@
+# Variables
+PANDOC = "pandoc"
+filters = "--filter pantable --filter pandoc-fignos --filter pandoc-tablenos --filter pandoc-citeproc"
+
+
+# Subworkflow dependencies
+os.chdir('figures')
+include: 'snakefile'
+os.chdir('..')
+
+subworkflow figuresworkflow:
+	workdir: 'figures'
+	snakefile: 'figures/snakefile'
+
+
+# RULES
+
+rule PDF:
+	input: 
+		figuresworkflow(rules.figures.input)		# This ensures that we have our figures ready
+		"manuscript.md"
+	output: "manuscript.pdf"
+	shell: "{PANDOC} {filters} -f markdown -t pdf -o {output} {input}"

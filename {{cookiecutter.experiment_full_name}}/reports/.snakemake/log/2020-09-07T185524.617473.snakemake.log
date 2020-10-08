@@ -1,0 +1,3 @@
+NameError in line 5 of /Users/kevindavis/Documents/Computer-Projects/Python-Projects/cookiecutters/exp/{{cookiecutter.experiment_full_name}}/reports/Snakefile:
+name 'manuscript' is not defined
+  File "/Users/kevindavis/Documents/Computer-Projects/Python-Projects/cookiecutters/exp/{{cookiecutter.experiment_full_name}}/reports/Snakefile", line 5, in <module>

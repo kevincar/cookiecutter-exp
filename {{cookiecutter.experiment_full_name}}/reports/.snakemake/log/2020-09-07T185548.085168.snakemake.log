@@ -1,0 +1,26 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	PDF
+	1
+
+[Mon Sep  7 18:55:48 2020]
+rule PDF:
+    input: manuscript.md
+    output: manuscript.pdf
+    jobid: 0
+
+[Mon Sep  7 18:55:49 2020]
+Error in rule PDF:
+    jobid: 0
+    output: manuscript.pdf
+    shell:
+        pandoc --filter pantable --filter pandoc-fignos --filter pandoc-tablenos --filter pandoc-citeproc -f markdown -t pdf -o manuscript.pdf manuscript.md
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /Users/kevindavis/Documents/Computer-Projects/Python-Projects/cookiecutters/exp/{{cookiecutter.experiment_full_name}}/reports/.snakemake/log/2020-09-07T185548.085168.snakemake.log

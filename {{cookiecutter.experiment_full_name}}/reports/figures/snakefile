@@ -1,0 +1,3 @@
+
+rule analysisresults:
+	input: figure_list

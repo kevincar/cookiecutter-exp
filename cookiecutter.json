@@ -1,4 +1,6 @@
 {
-	"experiment_name": "My Science Experiment",
-	"experiment_desc": "This experiment investigates all things science"
+	"experiment_full_name": "My Science Experiment",
+	"experiment_hyphenated_name": "my-science-experiment",
+	"desc": "This experiment investigates all things science",
+	"authors": ""
 }
