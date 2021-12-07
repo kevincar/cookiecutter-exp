@@ -1,0 +1,40 @@
+envvars:
+    "DATA_DIR"
+
+rule all:
+    input: 
+        remote_data_dir="data/remote"  # this can be changed and added
+
+rule data:
+    output:
+        remote=directory("data/remote")
+    run:
+        data_dir: str = os.environ.get("DATA_DIR")
+        remote_dir: str = os.path.join(data_dir, "DATA")  # folder name of data directory on remote storage
+        os.symlink(remote_dir, str(output.remote))
+
+rule figures:
+    # List figure  notebooks here
+    input: figure_nb="analysis/fig_fig.ipynb"
+    # List expected outputs here
+    output: figure_file="reports/figures/fig.png" 
+    shell:
+        """
+        for notebook in {input}
+        do
+            python -m jupyter nbconvert --to script --output-dir=src/analysis --execute $notebook
+        done
+        """
+
+rule paper:
+    input:
+        sections=["background.md", "methods.md", "results.md"]
+    output: "paper.docx"
+    params:
+        template="reports/assets/reference.docx",
+        filters="--filter pandoc-xnos"
+    shell:
+        """
+        pandoc {input.sections} {params.filters} -o {output}
+        """
+l
