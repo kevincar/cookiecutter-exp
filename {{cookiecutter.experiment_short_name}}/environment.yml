@@ -1,0 +1,30 @@
+name: {{cookiecutter.experiment_short_name}}
+channels:
+  - defaults
+dependencies:
+  - pip
+  - python=3.9
+  - pip:
+    - jupyterlab
+    - jupyterlab-git
+    - matplotlib
+    - matplotlib-inline
+    - mne
+    - notebook
+    - numpy
+    - openpyxl
+    - pandas
+    - pandocfilters
+    - pingouin
+    - python-dateutil
+    - pytz
+    - pyyaml
+    - scikit-learn
+    - scipy
+    - seaborn
+    - snakemake
+    - swifter
+    - tqdm
+variables:
+    # DATA_DIR: <Path to shared data directory>
+
